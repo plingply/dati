@@ -3,7 +3,13 @@
     <div class="msgtitle title">恭喜你完成答题</div>
     <div class="tishi">提交信息后就可以查看成绩</div>
     <div class="formbox">
-      <input type="text" :placeholder="'请输入'+item.field_name" v-model="item.val" :key="index" v-for="(item,index) in arr">
+      <input
+        type="text"
+        :placeholder="'请输入'+item.field_name"
+        v-model="item.val"
+        :key="index"
+        v-for="(item,index) in arr"
+      />
     </div>
     <button type="button" class="btn1" @click="save">查看成绩</button>
   </div>
@@ -28,7 +34,6 @@ export default {
   },
   methods: {
     save() {
-      
       var self = this;
       if (this.m.score === "") {
         this.$router.push({
@@ -87,7 +92,6 @@ export default {
     }
   },
   created() {
-    
     var arr = [
       {
         val: this.msg.name,
